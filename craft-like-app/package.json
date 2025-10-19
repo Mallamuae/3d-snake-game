@@ -1,0 +1,48 @@
+{
+  "name": "craft-like-app",
+  "version": "0.1.0",
+  "description": "A lightweight Craft-like note app built with Electron, React, Vite, and TypeScript",
+  "main": "dist-electron/main.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "build": "vite build",
+    "build:electron": "node build-electron.js",
+    "preview": "vite preview",
+    "postinstall": "electron-builder install-app-deps",
+    "dist": "npm run build && npm run build:electron && electron-builder",
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+  "@vitejs/plugin-react": "^4.0.0",
+    "concurrently": "^8.2.0",
+    "electron": "^26.0.0",
+    "electron-builder": "^24.6.0",
+    "wait-on": "^7.0.1",
+    "vite": "^5.3.0",
+    "typescript": "^5.5.6"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.18.0"
+  },
+  "build": {
+    "appId": "com.example.craftlike",
+    "productName": "CraftLike",
+    "files": [
+      "dist/**",
+      "dist-electron/**",
+      "node_modules/**",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    }
+  }
+}

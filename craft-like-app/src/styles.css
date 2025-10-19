@@ -1,0 +1,13 @@
+:root{--bg:#0f1724;--panel:#0b1220;--muted:#94a3b8;--accent:#7c3aed}
+*{box-sizing:border-box;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+html,body,#root{height:100%;margin:0}
+.app{display:flex;height:100vh;background:linear-gradient(180deg,#071028,#021021)}
+.sidebar{width:320px;background:rgba(255,255,255,0.02);padding:12px;color:#e6eef8;display:flex;flex-direction:column}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between}
+.sidebar input{margin:8px 0;padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.05);background:#071225;color:#dfe9ff}
+.notes-list{overflow:auto}
+.note-item{padding:8px;border-radius:6px;margin-bottom:6px;cursor:pointer}
+.note-item.active{background:linear-gradient(90deg,rgba(124,58,237,0.2),rgba(59,130,246,0.08))}
+.editor{flex:1;padding:20px;color:#e6eef8}
+.title-input{width:100%;font-size:20px;padding:8px;margin-bottom:10px;border:none;background:transparent;color:inherit}
+.content-input{width:100%;height:70vh;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);color:inherit}
